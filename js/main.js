@@ -22,13 +22,16 @@ window.onload = typeWriter;
 // Hide navbar sidebar saat di klik
 
 document.addEventListener('DOMContentLoaded', function () {
-    const offcanvasLinks = document.querySelectorAll('.offcanvas-body .nav-link');
+    const offcanvasLinks = document.querySelectorAll('.offcanvas-body .tutup-nav');
     const offcanvasElement = document.getElementById('offcanvasNavbar');
     const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
 
     offcanvasLinks.forEach(link => {
         link.addEventListener('click', function () {
-            bsOffcanvas.hide();
+            const delay = 550;
+            setTimeout(() => {
+                bsOffcanvas.hide();
+            }, delay);
         });
     });
 });
@@ -58,10 +61,12 @@ window.onscroll = () => {
     });
 };
 // hover navbar end
-
 // popup
-function toggle() {
-    var popup = document.getElementById('popupbox');
-    popup.classList.toggle('on');
-}
+document.querySelectorAll('.popklik').forEach(item => {
+    item.addEventListener('click', function() {
+        let popupId = this.getAttribute('data-popup');
+        let popup = document.getElementById(popupId);
+        popup.classList.toggle('on');
+    });
+});
 //pop end
