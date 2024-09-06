@@ -26,6 +26,10 @@ body,html{
   transition: 0.5s;
 }
 
+.popup h1 {
+  padding-top: 15px;
+}
+
 .popup {
   background-color: #fff;
   padding: 20px;
