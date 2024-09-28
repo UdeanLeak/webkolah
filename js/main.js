@@ -1,4 +1,5 @@
 
+
 // nimasi ketikan nuri
 const text = "SMK NURUL IMAN JAKTIM";
 let index = 0;
@@ -69,4 +70,38 @@ document.querySelectorAll('.popklik').forEach(item => {
         popup.classList.toggle('on');
     });
 });
+
+document.querySelectorAll('.popupbox_js').forEach(item => {
+    item.addEventListener('click', function() {
+        item.classList.remove('on');
+        if (!item.classList.contains('on')) {
+            document.getElementById('Jurusan').scrollIntoView();
+        }
+    });
+});
+// popup End
+
+// pop up identitas
+const openI= document.getElementById("open-identitas");
+const popupI= document.querySelector(".popup-identitas");
+const closeI= document.querySelector('.close-identitas')
+openI.addEventListener("click", function(){
+  popupI.style.display= "flex";
+});
+closeI.addEventListener("click", function(){
+  popupI.style.display= "none";
+});
+
+
 //pop end
+
+// slide pp guru bray
+function slideLeft() {
+    const container = document.querySelector('.card-container');
+    container.scrollBy({ left: -300, behavior: 'smooth' });
+  }
+  
+  function slideRight() {
+    const container = document.querySelector('.card-container');
+    container.scrollBy({ left: 300, behavior: 'smooth' });
+  }
